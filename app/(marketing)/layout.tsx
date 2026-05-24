@@ -1,14 +1,13 @@
-import "./marketing.css";
 import type { ReactNode } from "react";
-import { MarketingNav } from "./components/MarketingNav";
-import { MarketingFooter } from "./components/MarketingFooter";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export default function MarketingLayout({ children }: { children: ReactNode }) {
-  return (
-    <div className="mk-root">
-      <MarketingNav />
-      <main>{children}</main>
-      <MarketingFooter />
-    </div>
-  );
+  return <div className={`${inter.variable} font-sans`}>{children}</div>;
 }
